@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace H.Dependencies
 {
-    public class DepsJsonObject
+    internal class DepsJsonObject
     {
         [JsonProperty("runtimeTarget")]
         public RuntimeTarget? RuntimeTarget { get; set; }
@@ -20,7 +20,7 @@ namespace H.Dependencies
         public Dictionary<string, Library>? Libraries { get; set; }
     }
 
-    public class Library
+    internal class Library
     {
         [JsonProperty("type")]
         public string? Type { get; set; }
@@ -38,7 +38,7 @@ namespace H.Dependencies
         public string? HashPath { get; set; }
     }
 
-    public class RuntimeTarget
+    internal class RuntimeTarget
     {
         [JsonProperty("name")]
         public string? Name { get; set; }
@@ -47,7 +47,7 @@ namespace H.Dependencies
         public string? Signature { get; set; }
     }
 
-    public class NugetPackage
+    internal class NugetPackage
     {
         [JsonProperty("dependencies")]
         public Dictionary<string, string>? Dependencies { get; set; }

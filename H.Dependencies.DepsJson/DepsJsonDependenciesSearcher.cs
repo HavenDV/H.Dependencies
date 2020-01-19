@@ -6,8 +6,19 @@ using Newtonsoft.Json;
 
 namespace H.Dependencies
 {
+    /// <summary>
+    /// Searches full paths of dependencies from .deps.json files.
+    /// </summary>
     public static class DepsJsonDependenciesSearcher
     {
+        /// <summary>
+        /// Searches full paths of dependencies from .deps.json files.
+        /// </summary>
+        /// <param name="json"></param>
+        /// <param name="nugetFolder"></param>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="ArgumentException"></exception>
+        /// <returns></returns>
         public static IList<string> Search(string json, string? nugetFolder = null)
         {
             json = json ?? throw new ArgumentNullException(nameof(json));
