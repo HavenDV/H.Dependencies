@@ -5,7 +5,7 @@
 [![Requirements](https://img.shields.io/badge/Requirements-.NET%20Standard%202.0-blue.svg)](https://github.com/dotnet/standard/blob/master/docs/versions/netstandard2.0.md)
 [![Build Status](https://github.com/HavenDV/H.Dependencies/workflows/.NET%20Core/badge.svg?branch=master)](https://github.com/HavenDV/H.Dependencies/actions?query=workflow%3A%22.NET+Core%22)
 
-Searches full paths of dependencies in .deps.json files.
+Searches full paths of dependencies from .deps.json files.
 
 ### Nuget
 
