@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "H.Dependencies.NuGet", "H.D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "H.Dependencies.NuGet.Tests", "H.Dependencies.NuGet.Tests\H.Dependencies.NuGet.Tests.csproj", "{1116B126-8811-471F-AF84-30E46C85BB02}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "H.Dependencies.DepsJson", "H.Dependencies.DepsJson\H.Dependencies.DepsJson.csproj", "{C431CB16-C107-4BA8-BAFD-C241310993C2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "H.Dependencies.DepsJson.Tests", "H.Dependencies.DepsJson.Tests\H.Dependencies.DepsJson.Tests.csproj", "{85603D05-2EA2-449E-94BC-015594A4E392}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{1116B126-8811-471F-AF84-30E46C85BB02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1116B126-8811-471F-AF84-30E46C85BB02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1116B126-8811-471F-AF84-30E46C85BB02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C431CB16-C107-4BA8-BAFD-C241310993C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C431CB16-C107-4BA8-BAFD-C241310993C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C431CB16-C107-4BA8-BAFD-C241310993C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C431CB16-C107-4BA8-BAFD-C241310993C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85603D05-2EA2-449E-94BC-015594A4E392}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85603D05-2EA2-449E-94BC-015594A4E392}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85603D05-2EA2-449E-94BC-015594A4E392}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85603D05-2EA2-449E-94BC-015594A4E392}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
