@@ -9,10 +9,12 @@
 
   <ItemGroup>
     <None Remove="Data\NAudioRecorder.deps.json" />
+    <None Remove="Data\YandexConverter.deps.json" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Data\NAudioRecorder.deps.json" />
+    <EmbeddedResource Include="Data\YandexConverter.deps.json" />
   </ItemGroup>
   
   <ItemGroup>

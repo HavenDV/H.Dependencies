@@ -32,15 +32,44 @@ namespace H.Dependencies
                 throw new ArgumentException("Invalid json: Deserialized object is null");
             }
 
-            var dependencies = obj.Targets
+            var packages = obj.Targets
                 .Where(i => i.Value != null)
                 .SelectMany(i => i.Value)
                 .Where(i => i.Value?.Runtime != null)
-                .SelectMany(i => i.Value?.Runtime.Select(j =>
-                    j.Key.StartsWith("lib")
-                        ? Path.Combine(nugetFolder, i.Key, j.Key)
-                        : j.Key))
                 .ToList();
+
+            var explicitDependencies = packages
+                .SelectMany(i => 
+                    i.Value?.Runtime
+                        .Where(j => !j.Key.StartsWith("lib"))
+                        .Select(j => (packageName: i.Key, fileName: j.Key)))
+                .ToList();
+            var nugetDependencies = packages
+                .SelectMany(i =>
+                    i.Value?.Runtime
+                        .Where(j => j.Key.StartsWith("lib"))
+                        .Select(j => (packageName: i.Key, fileName: j.Key)))
+                .ToList();
+
+            /*
+            var runtimeDependencies = nugetDependencies
+                .Select(i => Path.Combine(nugetFolder, i.packageName, "runtimes"))
+                .Where(Directory.Exists)
+                .SelectMany(path => Directory.EnumerateFiles(path, "*.*", SearchOption.AllDirectories))
+                .ToList();
+            */
+            var runtimeDependencies = nugetDependencies
+                .Select(i => Path.Combine(nugetFolder, i.packageName, "runtimes"))
+                .Where(Directory.Exists)
+                .ToList();
+
+            var dependencies = new List<string>();
+
+            dependencies.AddRange(explicitDependencies
+                .Select(i => i.fileName));
+            dependencies.AddRange(nugetDependencies
+                .Select(i => Path.Combine(nugetFolder, i.packageName, i.fileName)));
+            dependencies.AddRange(runtimeDependencies);
 
             return dependencies;
         }
