@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using H.Dependencies.Tests.Utilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -7,7 +8,7 @@ namespace H.Dependencies.Tests
     [TestClass]
     public class DepsJsonDependenciesSearcherTests
     {
-        public void BaseTest(string name, int expectedCount)
+        public void BaseTest(string name)
         {
             var json = ResourcesUtilities.ReadFileAsString(name);
             var paths = DepsJsonDependenciesSearcher.Search(json);
@@ -19,19 +20,19 @@ namespace H.Dependencies.Tests
             }
 
             Assert.IsNotNull(paths);
-            Assert.AreEqual(expectedCount, paths.Count, nameof(paths.Count));
+            Assert.IsTrue(paths.Any(), "paths.Any()");
         }
 
         [TestMethod]
         public void SearchTest()
         {
-            BaseTest("NAudioRecorder.deps.json", 3);
+            BaseTest("NAudioRecorder.deps.json");
         }
 
         [TestMethod]
         public void SearchWithRuntimeTest()
         {
-            BaseTest("YandexConverter.deps.json", 11);
+            BaseTest("YandexConverter.deps.json");
         }
     }
 }
